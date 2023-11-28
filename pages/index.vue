@@ -1,8 +1,8 @@
 <template>
-  <NuxtLayout 
+  <div :class="general.pageBg">
+    <NuxtLayout 
     name="custom"
     title="Welcome"
-    :page-name="$route.name">
-    <nuxtPage />
-  </NuxtLayout>
+    :page-name="$route.name"></NuxtLayout>
+  </div>
 </template>
