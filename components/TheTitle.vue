@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="default-title">
+  <div class="default-title h1">
     <div class="default-title__wrap">
       welcome
     </div>
