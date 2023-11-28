@@ -5,3 +5,13 @@ body {
   font-family: $font-medium;
   letter-spacing: -.02rem;
 }
+
+.page_black {
+  background-color: $black;
+  color: $white;
+}
+
+.page_white {
+  background-color: $white;
+  color: $black;
+}
