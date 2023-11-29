@@ -4,7 +4,7 @@
     name="custom"
     title="About"
     :page-name="$route.name">
-    <div class="page_content">
+    <div class="page-content">
       <div 
         v-for="_ in 10"
         :key="_"
