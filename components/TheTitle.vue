@@ -7,7 +7,7 @@
 <template>
   <div class="default-title h1">
     <div class="default-title__wrap">
-      welcome
+      {{ props.text }}
     </div>
   </div>
 </template>
