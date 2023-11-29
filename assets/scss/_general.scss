@@ -15,3 +15,8 @@ body {
   background-color: $white;
   color: $black;
 }
+
+a.router-link-active {
+  opacity: .3;
+  pointer-events: none;
+}
