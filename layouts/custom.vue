@@ -6,6 +6,9 @@
 </script>
 <template>
   <div :class="`page ${props.pageName}`">
+
+    <TheHeader/>
+
     <div class="page-wrap _container">
       <TheTitle :text="props.title"/>
       <slot/>
