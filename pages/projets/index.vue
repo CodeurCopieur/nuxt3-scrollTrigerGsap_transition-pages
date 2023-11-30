@@ -9,7 +9,7 @@
       <nuxt-link
         v-for="_, i in 10"
         :key="i"
-        class="page-content__photo"
+        class="page-content__photo hover-image"
         :to="`/projets/${i+1}`">
           <img src="/photo.jpeg" alt="">
       </nuxt-link>
