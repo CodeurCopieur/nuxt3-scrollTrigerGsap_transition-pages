@@ -1,5 +1,18 @@
 <script setup>
   const percentage = ref(0);
+
+  onMounted(()=> {
+    const tl = gsap.timeline()
+
+    tl.to(percentage, {
+      progress: 100,
+      duration: 1,
+      onUpdate() {
+        percentage.value = Math.floor(percentage.progress)
+      }
+    })
+  });
+
 </script>
 
 <template>
