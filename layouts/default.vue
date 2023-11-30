@@ -1,6 +1,6 @@
 <template>
   <div id="viewport">
-    <THePreLoader/>
+    <ThePreLoader/>
     <slot />
   </div>
 </template>
