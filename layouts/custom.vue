@@ -3,6 +3,12 @@
     title: String,
     pageName: String
   });
+
+  watch(()=> general.isPreloaderVisible, () => {
+    firstScreenAnimation({
+      parent: `.${props.pageName}`
+    })
+  });
 </script>
 <template>
   <div :class="`page ${props.pageName}`">
