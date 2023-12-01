@@ -12,6 +12,7 @@
       },
       onComplete() {
         general.isPreloaderVisible = false
+        general.scrollLenis.start()
       }
     })
 
