@@ -15,6 +15,6 @@ export default defineNuxtConfig({
     }
   },
   imports: {
-    dirs: ['store', 'utils']
+    dirs: ['store', 'utils', 'animations']
   }
 })
