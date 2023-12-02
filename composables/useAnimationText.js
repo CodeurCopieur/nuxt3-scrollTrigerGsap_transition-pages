@@ -9,8 +9,10 @@ export function useAnimationText(el) {
       opacity: 0,
       y: 50,
       duration: .7,
-      delay: 1
+      delay: .1
     })
   }
+
+  return tl
 
 }
