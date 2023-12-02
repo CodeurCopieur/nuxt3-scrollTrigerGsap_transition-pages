@@ -1,3 +1,12 @@
+<script setup>
+  watch(()=> general.isPreloaderVisible, () => {
+    ScrollTrigger.create({
+      trigger: '.page-content__block',
+      markers: true,
+      animation: useAnimationText('.page-content__block')
+    })
+  });
+</script>
 <template>
   <div :class="general.pageBg">
     <NuxtLayout 
