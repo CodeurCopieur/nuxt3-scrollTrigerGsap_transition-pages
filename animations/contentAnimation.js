@@ -4,7 +4,7 @@ export function contentAnimation({element}) {
   elements.forEach( el => {
     ScrollTrigger.create({
       trigger: el,
-      markers: true,
+      // markers: true,
       animation: useAnimationText(el)
     })
   })
