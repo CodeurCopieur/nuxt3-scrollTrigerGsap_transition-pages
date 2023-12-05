@@ -1,11 +1,11 @@
-export function contentAnimation({element}) {
+export function contentAnimation({type, element}) {
   const elements = document.querySelectorAll(element)
 
   elements.forEach( el => {
     ScrollTrigger.create({
       trigger: el,
       // markers: true,
-      animation: useAnimationText(el)
+      animation: type === 'text' ? useAnimationText(el) : useAnimationImage(el)
     })
   })
 }

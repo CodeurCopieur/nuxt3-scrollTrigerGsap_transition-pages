@@ -1,6 +1,6 @@
 <script setup>
   watch(()=> general.isPreloaderVisible, () => {
-    contentAnimation({element: '.page-content__block'})
+    contentAnimation({type: 'text', element: '.page-content__block'})
   });
 </script>
 <template>

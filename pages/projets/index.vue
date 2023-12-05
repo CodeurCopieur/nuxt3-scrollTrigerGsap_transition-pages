@@ -1,3 +1,8 @@
+<script setup>
+  watch(()=> general.isPreloaderVisible, () => {
+    contentAnimation({type: 'image', element: '.page-content__photo'})
+  });
+</script>
 <template>
   <div :class="general.pageBg">
     <NuxtLayout 
