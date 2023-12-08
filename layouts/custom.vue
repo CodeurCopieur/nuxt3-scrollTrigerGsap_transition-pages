@@ -19,6 +19,7 @@
     <TheHeader/>
 
     <div class="page-wrap _container">
+      <PageMask />
       <TheTitle :text="props.title"/>
       <slot/>
     </div>
