@@ -10,11 +10,26 @@ export default defineNuxtRouteMiddleware((to, from) =>  {
     const tl = gsap.timeline({
       onComplete() {
 
-        gsap.set(el, {
+        gsap.set([
+          el, 
+          el.querySelector('.page-wrap'), 
+          el.querySelector('.header')], {
           clearProps: 'all'
         })
-        done()
 
+        ScrollTrigger.getAll().filter( st => {
+          if (from.name.includes('-id')) {
+            if (st.trigger && st.trigger.closest(`.projet-${from.params.id}`)) {
+              st.kill()
+            }
+          } else {
+            if (st.trigger && st.trigger.closest(`.${from.name}`)) {
+              st.kill()
+            }
+          }
+        })
+
+        done()
       }
     })
 
@@ -24,13 +39,28 @@ export default defineNuxtRouteMiddleware((to, from) =>  {
       pointerEvents: 'none'
     })
 
+    tl.fromTo(el, {
+			clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+		}, {
+			clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
+			duration: 1,
+		})
+
     tl.to(el.querySelector('.header'), {
       yPercent: -100,
       duration: .3
     }, 0)
+
+    tl.to(el.querySelector('.page-wrap'), {
+      xPercent: -20,
+      duration: 1
+    }, 0)
   }
 
   to.meta.pageTransition.onEnter = (el, done) => {
+
+    useChangePageBg()
+    
     const tl = gsap.timeline({
       onComplete() {
         gsap.set(el, {
@@ -53,10 +83,15 @@ export default defineNuxtRouteMiddleware((to, from) =>  {
       pointerEvents: 'none'
     })
 
-    tl.from(el, {
-      opacity: 0,
-      duration: .3
+    tl.from(el.querySelector('.page-wrap'), {
+      xPercent: 50,
+      duration: 1
     }, 0)
+
+    // tl.from(el, {
+    //   opacity: 0,
+    //   duration: .3
+    // }, 0)
   }
 
 })
