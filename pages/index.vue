@@ -1,3 +1,6 @@
+<script setup>
+  definePageMeta(transition);
+</script>
 <template>
   <div :class="general.pageBg">
     <NuxtLayout 
