@@ -1,6 +1,12 @@
 <script setup>
-  watch(()=> general.isPreloaderVisible, () => {
-    contentAnimation({type: 'text', element: '.page-content__block'})
+  definePageMeta(transition);
+
+  watch(()=> [general.isTransitionFinish, general.isPreloaderVisible], ([tF, pV]) => {
+
+    if(tF && !pV) {
+      contentAnimation({type: 'text', element: '.page-content__block'})
+    }
+    
   });
 </script>
 <template>

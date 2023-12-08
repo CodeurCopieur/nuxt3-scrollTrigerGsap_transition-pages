@@ -1,8 +1,14 @@
 <script setup>
-  watch(()=> general.isPreloaderVisible, () => {
-    contentAnimation({type: 'image', element: '.page-content__block-photo'})
-    contentAnimation({type: 'text', element: '.page-content__block-text'})
-    contentAnimation({type: 'text', element: '.page-next__project'})
+  definePageMeta(transition);
+
+  watch(()=> [general.isTransitionFinish, general.isPreloaderVisible], ([tF, pV]) => {
+    
+    if(tF && !pV) {
+      contentAnimation({type: 'image', element: '.page-content__block-photo'})
+      contentAnimation({type: 'text', element: '.page-content__block-text'})
+      contentAnimation({type: 'text', element: '.page-next__project'})
+    }
+    
   });
 </script>
 <template>

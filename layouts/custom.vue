@@ -4,10 +4,13 @@
     pageName: String
   });
 
-  watch(()=> general.isPreloaderVisible, () => {
-    firstScreenAnimation({
+  watch(()=> [general.isTransitionStart, general.isPreloaderVisible], ([tS, pV]) => {
+    if(tS && !pV) {
+      firstScreenAnimation({
       parent: `.${props.pageName}`
     })
+    }
+    
   });
 </script>
 <template>
