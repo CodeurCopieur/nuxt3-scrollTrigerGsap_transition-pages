@@ -20,4 +20,8 @@
     align-items: center;
     justify-content: center;
   }
+
+  .default-title__wrap {
+    will-change: transform;
+  }
 </style>
