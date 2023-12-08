@@ -13,7 +13,8 @@ export default defineNuxtRouteMiddleware((to, from) =>  {
         gsap.set([
           el, 
           el.querySelector('.page-wrap'), 
-          el.querySelector('.header')], {
+          el.querySelector('.header'),
+          el.querySelector('.page-mask')], {
           clearProps: 'all'
         })
 
@@ -42,7 +43,9 @@ export default defineNuxtRouteMiddleware((to, from) =>  {
     tl.fromTo(el, {
 			clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
 		}, {
-			clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
+			clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
+      // clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
+      // clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
 			duration: 1,
 		})
 
@@ -53,6 +56,11 @@ export default defineNuxtRouteMiddleware((to, from) =>  {
 
     tl.to(el.querySelector('.page-wrap'), {
       xPercent: -20,
+      duration: 1
+    }, 0)
+
+    tl.to(el.querySelector('.page-mask'), {
+      opacity: 1,
       duration: 1
     }, 0)
   }
@@ -84,7 +92,7 @@ export default defineNuxtRouteMiddleware((to, from) =>  {
     })
 
     tl.from(el.querySelector('.page-wrap'), {
-      xPercent: 50,
+      xPercent: 20,
       duration: 1
     }, 0)
 
